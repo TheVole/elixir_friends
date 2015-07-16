@@ -12,4 +12,5 @@ config :elixir_friends, ElixirFriends.Repo,
   username: "postgres",
   password: "postgres",
   database: "elixir_friends_prod",
+  url: System.get_env("DATABASE_URL"),
   size: 20 # The amount of database connections in the pool
