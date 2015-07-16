@@ -14,7 +14,6 @@ config :elixir_friends, ElixirFriends.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: System.get_env("DATABASE_POSTGRESQL_USERNAME") || "postgres",
   password: System.get_env("DATABASE_POSTGRESQL_PASSWORD") || "postgres",
-  password: "postgres",
   database: "elixir_friends_test",
   size: 1, # Use a single connection for transactional tests
   pool: Ecto.Adapters.SQL.Sandbox
