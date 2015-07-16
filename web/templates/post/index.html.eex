@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= for post <- @posts do %>
+    <%= for post <- @posts_page.entries do %>
       <tr>
         <td><img src='<%= post.image_url %>' /></td>
         <td><%= post.image_url %></td>
