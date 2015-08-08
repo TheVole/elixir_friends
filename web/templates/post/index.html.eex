@@ -29,4 +29,5 @@
   </tbody>
 </table>
 
-<%= link "New post", to: post_path(@conn, :new) %>
+<%# <%= link "New post", to: post_path(@conn, :new) %1> %>
+<%= pagination_links(@posts_page) %>
