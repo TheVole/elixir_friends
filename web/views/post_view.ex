@@ -6,7 +6,7 @@ defmodule ElixirFriends.PostView do
   def pagination_links(paginator) do
     links = page_numbers(paginator)
     |> Enum.map(&page_link/1)
-    content_tag(:ul, links)
+    content_tag(:div, links, class: "horizontal ui list")
   end
 
   defp page_numbers(paginator) do
@@ -28,10 +28,10 @@ defmodule ElixirFriends.PostView do
   end
 
   defp page_link({text, page_number}) do
-    content_tag(:li, link("#{text}", [to: "?page=#{page_number}"]))
+    content_tag(:div, link("#{text}", [to: "?page=#{page_number}"]), class: "item")
   end
 
   defp page_link(page_number) do
-    content_tag(:li, link("#{page_number}", [to: "?page=#{page_number}"]))
+    content_tag(:div, link("#{page_number}", [to: "?page=#{page_number}"]), class: "item")
   end
 end
