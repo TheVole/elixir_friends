@@ -15,7 +15,7 @@ defmodule ElixirFriends.API.PostControllerTest do
       username: "knewter",
       source_url: "http://elixirfriends.com"
     }
-    post |> ElixirFriends.Repo.insert!
+    inserted_post = post |> ElixirFriends.Repo.insert!
 
     conn = get conn, "/api/posts"
 
@@ -24,7 +24,7 @@ defmodule ElixirFriends.API.PostControllerTest do
       total_entries: 1,
       page_size: 20,
       page_number: 1,
-      entries: [post]
+      entries: [inserted_post]
     } |> Poison.encode!
 
     assert json_response(conn, 200) == expected_response

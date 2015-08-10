@@ -18,8 +18,8 @@ defmodule ElixirFriends.ImageTweetStreamer do
       source_url: first_photo(tweet).expanded_url,
       username: tweet.user.screen_name
     }
-    IO.puts "storing this post: #{inspect post}"
-    ElixirFriends.Repo.insert(post)
+    # IO.puts "storing this post: #{inspect post}"
+    ElixirFriends.Repo.insert!(post)
   end
 
   defp photos(%ExTwitter.Model.Tweet{} = tweet) do
