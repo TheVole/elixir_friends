@@ -26,6 +26,7 @@ defmodule ElixirFriends.API.PostControllerTest do
       page_number: 1,
       entries: [inserted_post]
     } |> Poison.encode!
+    |> Poison.decode!
 
     assert json_response(conn, 200) == expected_response
   end
